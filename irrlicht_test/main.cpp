@@ -1,5 +1,5 @@
-#include <irrlicht.h>
-#include "driverChoice.h"
+#include <irrlicht/irrlicht.h>
+#include <irrlicht/driverChoice.h>
 #pragma comment(lib, "Irrlicht.lib")
 
 using namespace irr;

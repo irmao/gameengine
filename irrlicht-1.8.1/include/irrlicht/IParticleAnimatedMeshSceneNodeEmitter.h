@@ -1,0 +1,1 @@
+../IParticleAnimatedMeshSceneNodeEmitter.h

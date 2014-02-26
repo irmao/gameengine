@@ -1,0 +1,1 @@
+../ISceneNodeAnimatorCameraFPS.h

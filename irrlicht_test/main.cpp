@@ -20,10 +20,10 @@ int main()
 	scene->addCameraSceneNodeFPS();
 	device->getCursorControl()->setVisible(false);
 	
-	ITexture* sprite1 = driver->getTexture("../KURO_M_0.png");
-	ITexture* sprite2 = driver->getTexture("../KURO_M_1.png");
-	ITexture* rocks = driver->getTexture("../stones.jpg");
-	IMesh* woman = scene->getMesh("../woman.md2");
+	ITexture* sprite1 = driver->getTexture("./img/KURO_M_0.png");
+	ITexture* sprite2 = driver->getTexture("./img/KURO_M_1.png");
+	ITexture* rocks = driver->getTexture("./img/stones.jpg");
+	IMesh* woman = scene->getMesh("./img/woman.md2");
 
 	driver->makeColorKeyTexture( sprite1, position2d<s32>(0, 0) );				// Isto faz o primeiro pixel do sprite ser entendido como alpha
 	IBillboardSceneNode* billBoard1 = scene->addBillboardSceneNode( 0, dimension2d<f32>(50, 50), vector3df(20, -75, 450) );

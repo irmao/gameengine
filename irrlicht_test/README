@@ -1,7 +1,7 @@
 Para compilar no linux:
 
 Dentro da pasta "lib", crie um link simbolico apontando para o diretório onde está
-a sua home do irrlicht-1.8.1 no seu computador. Não dê "git add" nessa pasta, pois
-assim o amiguinho não precisa baixar 350Mb desnecessários =)
+a sua home do irrlicht-1.8.1
 
 Depois disso, é só dar "make", e o binário vai ser criado na pasta "linux".
+Para rodar, "make run"

@@ -9,8 +9,6 @@ class sprite
         int height;     // Frame height
         int columns;        // Frames per line
         sprite ( const string& spritePath, int frameWidth, int frameHeight, int framesPerLine );
-        image getFrame ( int spriteIndex );
 }
-
 
 #endif

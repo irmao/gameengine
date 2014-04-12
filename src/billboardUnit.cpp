@@ -1,11 +1,20 @@
 #include "billboardUnit.hpp"
-
+#include <thread>
+#include <unistd.h>
+#include <iostream>
 
 /* PUBLIC METHODS */
 
-billboardUnit::billboardUnit() {}
+billboardUnit::billboardUnit() {
+	running = false;
+	setCurrentAnimationIndex(0);
+	currentAnimationIndex = 0;
+	currentFrameIndex = 0;
+}
 
-billboardUnit::~billboardUnit() {}
+billboardUnit::~billboardUnit() {
+	stopAnimation();
+}
 
 void billboardUnit::addAnimation(animation a) {
         animations.push_back(a);
@@ -33,16 +42,34 @@ int billboardUnit::getCurrentFrameIndex() {
 }
 
 /* TODO */
-void billboardUnit::run(){}
+void billboardUnit::run(){
+	running = true;
+
+	std::thread t(&billboardUnit::threadRun, this);
+	t.detach();
+}
+
+void billboardUnit::stopAnimation(){
+	running = false;
+	cout << "Stopping animation!" << endl;
+}
 
 /* PRIVATE METHODS */
 
 void billboardUnit::updateFrameIndex() {
-    currentFrameIndex++;
-    
-    if (animations[currentAnimationIndex].repeat 
-        && currentFrameIndex == animations[currentAnimationIndex].sequence.size())
-        currentFrameIndex = 0;
+	if (currentFrameIndex < animations[currentAnimationIndex].sequence.size()-1)
+		currentFrameIndex++;
+	else  {
+		if (animations[currentAnimationIndex].repeat)
+			currentFrameIndex = 0;
+	}
 }
 
-int main(void) {return 0;} // for test only
+void billboardUnit::threadRun() {
+	cout << "Running!" << endl;
+	while (running) {
+		usleep(animations[currentAnimationIndex].delay);
+		updateFrameIndex();
+		cout << currentFrameIndex << endl;
+	}
+}

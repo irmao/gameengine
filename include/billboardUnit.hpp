@@ -2,12 +2,14 @@
 #define BILLBOARDUNIT_HPP
 
 #include "animation.hpp"
-#include "sprite.hpp"
+//#include "sprite.hpp"
+//#include "entity3D.hpp"
 #include <vector>
 
 using namespace std;
 
-class entity3D {}; // for test only
+class sprite {}; // for test only
+class entity3D {};
 
 class billboardUnit : public entity3D {
   public:
@@ -21,13 +23,16 @@ class billboardUnit : public entity3D {
     animation getCurrentAnimation();
     int getCurrentFrameIndex();
     void run();
+    void stopAnimation();
 
   private:
     vector<animation> animations;
     unsigned int currentFrameIndex; // index of the current frame in the sequence 
     int currentAnimationIndex;
+    bool running;
 
     void updateFrameIndex();
+    void threadRun();
 };
 
 

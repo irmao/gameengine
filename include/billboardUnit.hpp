@@ -2,14 +2,11 @@
 #define BILLBOARDUNIT_HPP
 
 #include "animation.hpp"
-//#include "sprite.hpp"
-//#include "entity3D.hpp"
+#include "sprite.hpp"
+#include "entity3D.hpp"
 #include <vector>
 
 using namespace std;
-
-class sprite {}; // for test only
-class entity3D {};
 
 class billboardUnit : public entity3D {
   public:

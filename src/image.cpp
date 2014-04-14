@@ -2,5 +2,5 @@
 
 image::image ( const string& imagePath )
 {
-    this->path ( imagePath );
+    this->path = imagePath ;
 }

@@ -1,8 +1,8 @@
-#include "sprite.hpp"
+#include "Sprite.hpp"
 
-sprite::sprite ( const string& spritePath, int frameWidth, int frameHeight, int, framesPerLine )
+Sprite::Sprite ( const string& SpritePath, int frameWidth, int frameHeight, int, framesPerLine )
 {
-    this->stringPath = image ( spritePath );
+    this->stringPath = image ( SpritePath );
     this->width = frameWidth;
     this->height = frameHeight;
     this->columns = framesPerLine;

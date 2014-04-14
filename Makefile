@@ -1,5 +1,5 @@
 INCLUDES= -Iirrlicht-1.8.1/include -Iinclude/
-LDFLAGS= -Lirrlicht-1.8.1/lib/Linux	-Llib/ -lpthread
+LDFLAGS= -Lirrlicht-1.8.1/lib/Linux	-Llib/ 
 BIN= ./bin
 OBJ= ./obj
 SRC= ./src

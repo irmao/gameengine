@@ -1,16 +1,19 @@
 #ifndef SPRITE_HPP
 #define SPRITE_HPP
+#include <string>
+//#include "image.hpp"
 
 using namespace std;
 
-class Sprite 
+class sprite 
 {
     public:
         string stringPath;
         int width;      // Frame width
         int height;     // Frame height
         int columns;        // Frames per line
-        Sprite ( const string& , int , int , int );
+        sprite ( const string& , int , int , int );
+        sprite ();
 };
 
 #endif

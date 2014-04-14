@@ -1,15 +1,16 @@
 INCLUDES= -Iirrlicht-1.8.1/include -Iinclude/
-LIBS= -Lirrlicht-1.8.1/lib/Linux	-Llib/
+LDFLAGS= -Lirrlicht-1.8.1/lib/Linux	-Llib/ -lpthread
 BIN= ./bin
 OBJ= ./obj
 SRC= ./src
+LIB= ./lib
 CPPFLAGS= -O2 -Wall $(INCLUDES) -std=c++11
 OBJECTS= $(OBJ)/animation.o $(OBJ)/billboardUnit.o $(OBJ)/entity2D.o $(OBJ)/entity3D.o $(OBJ)/image.o $(OBJ)/input.o $(OBJ)/model.o $(OBJ)/point2D.o $(OBJ)/point3D.o $(OBJ)/sprite.o
 
 # Make commands
 
 all: libs
-	gcc -o gameTest src/main.cpp ${INCLUDES} ${LIBS}
+	gcc -o $(BIN)/gameTest src/main.cpp ${INCLUDES} ${LDFLAGS}
 
 libs: $(LIB)/libGE.a
 	
@@ -19,7 +20,7 @@ $(LIB)/libGE.a: $(OBJECTS)
 $(OBJ)/animation.o: $(SRC)/animation.cpp
 	g++ $(CPPFLAGS) -c $(SRC)/animation.cpp  $(INCLUDES) -o $(OBJ)/animation.o
 
-$(OBJ)/billboardUnit.o:		 $(SRC)/billboardUnit.cpp
+$(OBJ)/billboardUnit.o:		 $(SRC)/billboardUnit.cpp	$(OBJ)/sprite.o		$(OBJ)/entity3D.o		$(OBJ)/animation.o
 	g++ $(CPPFLAGS) -c $(SRC)/billboardUnit.cpp $(INCLUDES) -o $(OBJ)/billboardUnit.o
 
 $(OBJ)/entity2D.o: $(SRC)/entity2D.cpp

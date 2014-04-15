@@ -11,6 +11,6 @@ class entity3D
 
         entity3D();
         entity3D( const double whichFacingAngle, const point3D& whichPosition );
-}
+};
 
 #endif

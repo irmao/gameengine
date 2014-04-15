@@ -1,6 +1,8 @@
 #ifndef INPUT_HPP
 #define INPUT_HPP
 
+#include "irrlicht.h"
+
 class input 
 {
     public:

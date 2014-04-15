@@ -9,3 +9,4 @@ entity2D::entity2D( const double whichFacingAngle, const point2D& whichPosition 
     : facingAngle( whichFacingAngle )
     , position( whichPosition )
 {}
+

@@ -11,6 +11,6 @@ class entity2D
 
         entity2D();
         entity2D( const double whichFacingAngle, const point2D& whichPosition );
-}
+};
 
 #endif

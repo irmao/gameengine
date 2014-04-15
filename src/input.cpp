@@ -1,4 +1,5 @@
 #include "input.hpp"
+#include "irrlicht.h"
 
 input::input() 
 {
